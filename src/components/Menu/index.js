@@ -1,24 +1,20 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import LogoDevs from '../LogoDevsFlix';
+import { Link } from 'react-router-dom';
 import Button from '../Button';
 import './menu.css';
 
 function Menu() {
     return (
-        <Fragment>
+        <nav className="Menu">
+            <Link to="/">
+                <LogoDevs />
+            </Link>
 
-            <nav className="Menu">
-                <a href="/">
-                    <LogoDevs />
-                </a>
-                <Button as="a" className="ButtonLink" href="/">
-                    Novo vídeo
+            <Button as={Link} className="ButtonLink" to="/cadastro/video">
+                Novo vídeo
             </Button>
-            </nav>
-
-        </Fragment>
-
-
+        </nav>
     );
 }
 
